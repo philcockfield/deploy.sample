@@ -1,0 +1,8 @@
+{
+  "alias": "deploy-sample.db.team",
+  "forwardNpm": true,
+  "public": false,
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "deploy.sample",
+  "version": "1.0.0",
+  "description": "Sample deployment for debugging on Now.",
+  "main": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
+  "scripts": {
+    "start": "node .",
+    "watch": "nodemon . -e js --ignore src",
+    "lint": "tslint 'src/**/*.ts{,x}' --format verbose",
+    "now-build": "echo no-op",
+    "build": "rm -rf ./lib && tsc",
+    "prepublish": "yarn run lint && yarn test && yarn run build",
+    "deploy": "yarn run build && now"
+  },
+  "dependencies": {
+    "@tdb/util": "^1.0.72",
+    "@tdb/util.server": "^1.0.20"
+  },
+  "devDependencies": {
+    "@tdb/typescript": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "__GITHUB_URL__"
+  },
+  "license": "UNLICENSED"
+}
